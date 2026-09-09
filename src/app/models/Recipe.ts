@@ -2,7 +2,7 @@ export type Ingredient = {
   id: string;
   name: string;
   count: number;
-  measurementValue: 'гр.' | 'ст. л' | 'ч.л' | 'ст.' | 'шт.' | 'мл' | 'по вкусу'
+  unit: 'гр.' | 'ст. л' | 'ч.л' | 'ст.' | 'шт.' | 'мл' | 'по вкусу'
 }
 
 type Step = {
@@ -13,13 +13,13 @@ type Step = {
 }
 
 export const Category = {
-  baking: 'Выпечка',
-  salads: 'Салаты',
-  desserts: 'Десерты',
-  soups: 'Супы',
-  appetizers: 'Закуски',
-  sideDishes: 'Гарниры',
-  drinks: 'Напитки',
+  baking: {en: 'baking', ru: 'выпечка'},
+  salads: {en: 'salads', ru: 'салаты'},
+  desserts: {en: 'desserts', ru: 'десерты'},
+  soups: {en: 'soups', ru: 'супы'},
+  appetizers: {en: 'appetizers', ru: 'закуски'},
+  sideDishes: {en: 'side-dishes', ru: 'гарниры'},
+  drinks: {en: 'drinks', ru: 'напитки'}
 } as const
 
 export type Category = (typeof Category)[keyof typeof Category]

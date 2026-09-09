@@ -1,0 +1,69 @@
+.recipe {
+  &Title {
+    margin-bottom: 0.5em;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &Wrapper {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 430px 1fr;
+    grid-template-rows: 2em auto;
+    margin: 0 0 1em 0;
+  }
+
+  &Subtitle {
+    font-size: 1.5rem;
+    grid-column: 2;
+  }
+
+  &SubtitleCenter {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  &Image {
+    grid-column: 1;
+    grid-row: 1/3;
+  }
+
+  &Ingridients {
+    grid-column: 2;
+    padding: 0 0 0 2em;
+    list-style-type: none;
+    counter-reset: my-awesome-counter;
+  }
+
+  &Ingridient {
+    counter-increment: my-awesome-counter;
+    position: relative;
+    margin-bottom: 8px;
+
+    &::before {
+      content: counter(my-awesome-counter) ")";
+
+      display: inline-block;
+      width: 30px;
+      text-align: right;
+      margin-left: -35px;
+      margin-right: 8px;
+    }
+  }
+
+  &Steps {
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &Step {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1rem;
+  }
+
+  &StepImage {
+    grid-column: 1;
+  }
+}

@@ -4,18 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bf891a3-8040-4a95-bc61-33caa28a3630" name="Changes" comment="" />
+    <list default="true" id="7bf891a3-8040-4a95-bc61-33caa28a3630" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/mockData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/mockData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/Recipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/Recipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/models/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/models/User.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="19" />
+    <option name="cachedIndexableFilesCount" value="56" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -29,61 +44,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000001159706042" />
-      <entry key="MS500" value="1.0513739192045464" />
-      <entry key="S2" value="2.1653132932550134" />
-      <entry key="S5" value="4.775696071577826" />
-      <entry key="S10" value="8.409205124484048" />
-      <entry key="S30" value="15.027337141032115" />
-      <entry key="S60" value="19.034588710622447" />
-      <entry key="M2" value="23.23692522274526" />
-      <entry key="M5" value="35.68503753994428" />
-      <entry key="M10" value="59.83358601974241" />
-      <entry key="M15" value="79.19194626487106" />
-      <entry key="M30" value="116.83639445880965" />
-      <entry key="H1" value="158.66252998523456" />
-      <entry key="H2" value="197.24904968641601" />
-      <entry key="H4" value="225.2124620119519" />
-      <entry key="D1" value="255.1235073369066" />
-      <entry key="W1" value="260.99735499175154" />
+      <entry key="MS100" value="2.7739849693524366E-84" />
+      <entry key="MS500" value="1.946336788553761E-17" />
+      <entry key="S2" value="8.539808520703241E-5" />
+      <entry key="S5" value="0.04066081163622055" />
+      <entry key="S10" value="0.34224190861897763" />
+      <entry key="S30" value="1.4485574314379916" />
+      <entry key="S60" value="2.083495474664413" />
+      <entry key="M2" value="2.5007957518907014" />
+      <entry key="M5" value="3.0517407573262805" />
+      <entry key="M10" value="5.2866774027147585" />
+      <entry key="M15" value="8.448125170299805" />
+      <entry key="M30" value="17.259308640642168" />
+      <entry key="H1" value="30.218855914093506" />
+      <entry key="H2" value="58.22335877533991" />
+      <entry key="H4" value="152.17312104770795" />
+      <entry key="D1" value="850.7839698389686" />
+      <entry key="W1" value="1263.4637497187994" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="1.6173359447277042E-123" />
-      <entry key="S5" value="1.198337404424434E-49" />
-      <entry key="S10" value="5.7481432594049115E-25" />
-      <entry key="S30" value="1.7134327757593142E-8" />
-      <entry key="S60" value="2.2659408308823127E-4" />
-      <entry key="M2" value="0.02683084750531444" />
-      <entry key="M5" value="0.6313783420899505" />
-      <entry key="M10" value="2.441236488014761" />
-      <entry key="M15" value="4.108147581258678" />
-      <entry key="M30" value="7.28136798747634" />
-      <entry key="H1" value="10.091238424141348" />
-      <entry key="H2" value="12.147524209118176" />
-      <entry key="H4" value="13.446533592831782" />
-      <entry key="D1" value="14.720253477872538" />
-      <entry key="W1" value="14.959477578385487" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0005388327514277" />
+      <entry key="S2" value="1.228053254565359" />
+      <entry key="S5" value="1.8726435751900399" />
+      <entry key="S10" value="2.579497467370732" />
+      <entry key="S30" value="3.8137561288451964" />
+      <entry key="S60" value="4.493985914053269" />
+      <entry key="M2" value="5.079002874097669" />
+      <entry key="M5" value="5.87079261943478" />
+      <entry key="M10" value="7.0505355540553465" />
+      <entry key="M15" value="8.232672375826285" />
+      <entry key="M30" value="11.377249341238304" />
+      <entry key="H1" value="16.134904544412734" />
+      <entry key="H2" value="26.045923805803938" />
+      <entry key="H4" value="56.90754956059585" />
+      <entry key="D1" value="228.57997067538645" />
+      <entry key="W1" value="314.17348852305497" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.7684376743709119" />
-      <entry key="MS500" value="0.9969163985630428" />
-      <entry key="S2" value="2.135682468802919" />
-      <entry key="S5" value="4.74819122348497" />
-      <entry key="S10" value="8.383232325236584" />
-      <entry key="S30" value="15.001358112207242" />
-      <entry key="S60" value="19.004074791105502" />
-      <entry key="M2" value="23.2334076582026" />
-      <entry key="M5" value="36.29181670011768" />
-      <entry key="M10" value="62.253508423080106" />
-      <entry key="M15" value="83.28109498381119" />
-      <entry key="M30" value="124.10305959442024" />
-      <entry key="H1" value="168.74290857284626" />
-      <entry key="H2" value="209.38932577821058" />
-      <entry key="H4" value="238.65467735557826" />
-      <entry key="D1" value="269.8429137241491" />
-      <entry key="W1" value="275.9567079341408" />
+      <entry key="MS100" value="0.007921558435859602" />
+      <entry key="MS500" value="0.3802273645080228" />
+      <entry key="S2" value="0.9715607671479657" />
+      <entry key="S5" value="1.7457083622672578" />
+      <entry key="S10" value="2.7818550320084907" />
+      <entry key="S30" value="5.166807421525616" />
+      <entry key="S60" value="6.515815482209871" />
+      <entry key="M2" value="7.543822985128692" />
+      <entry key="M5" value="8.905537400955987" />
+      <entry key="M10" value="12.325247190458413" />
+      <entry key="M15" value="16.66963321764652" />
+      <entry key="M30" value="28.626354949472272" />
+      <entry key="H1" value="46.34520610135667" />
+      <entry key="H2" value="84.2610474826459" />
+      <entry key="H4" value="209.07007815882352" />
+      <entry key="D1" value="1079.356177254131" />
+      <entry key="W1" value="1577.6357013062177" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -107,21 +122,36 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
     &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Web-projects/next-learning/src/app/ui/searchbar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Next.js: server-side.executor&quot;: &quot;Run&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\Web-projects\\next-learning\\node_modules\\typescript\\lib&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Web-projects\next-learning\src\app\ui\searchbar" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Web-projects\next-learning\src\app\recipes\[id]" />
+      <recent name="D:\Web-projects\next-learning\src\app\ui\header" />
+    </key>
+  </component>
   <component name="RunManager" selected="npm.Next.js: server-side">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
       <method v="2" />
@@ -152,6 +182,11 @@
       <option name="presentableId" value="Default" />
       <updated>1786374319705</updated>
       <workItem from="1786374322248" duration="5368000" />
+      <workItem from="1786382429767" duration="6962000" />
+      <workItem from="1786604712245" duration="1024000" />
+      <workItem from="1786880204083" duration="1241000" />
+      <workItem from="1788508136106" duration="44410000" />
+      <workItem from="1788935371218" duration="17645000" />
     </task>
     <servers />
   </component>

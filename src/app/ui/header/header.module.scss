@@ -1,0 +1,23 @@
+.header {
+  padding: 1rem 0;
+  width: 100%;
+  border-bottom: 1px solid white;
+
+  &Wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 1440px;
+  }
+
+  &Authorize {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+
+

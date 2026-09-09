@@ -1,0 +1,20 @@
+.page {
+  &Title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 0 1em 0;
+  }
+
+  &List {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5em 2em;
+    margin: 0 0 1em 0;
+    list-style: none;
+  }
+
+  &EmptyPlaceholder {
+    margin: auto 0;
+    text-align: center;
+  }
+}

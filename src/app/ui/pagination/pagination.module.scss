@@ -1,0 +1,73 @@
+.pagination {
+  display: flex;
+  gap: 1em;
+  margin: 0 auto;
+  padding: 1em;
+  width: fit-content;
+  border: solid 1px white;
+
+  &Icon {
+    background-color: transparent;
+  }
+
+  &Arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    min-width: 3.5em;
+    height: 3.5em;
+    border: solid 1px white;
+    transition: background-color 0.3s ease;
+    user-select: none;
+
+    &:not(&Disabled):hover {
+      background-color: dimgrey;
+    }
+
+    &Disabled {
+      cursor: not-allowed;
+      background-color: rgb(128 128 128 / 0.2);
+    }
+  }
+
+  &Count {
+    display: flex;
+    gap: 1em;
+  }
+
+  &Number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    min-width: 3.5em;
+    height: 3.5em;
+    border: solid 1px white;
+    transition: background-color 0.3s ease;
+
+    &First {
+      border-radius: 0.6em 0 0 0.6em;
+    }
+
+    &Last {
+      border-radius: 0 0.6em 0.6em 0;
+    }
+
+    &Active {
+      background-color: white;
+      color: black;
+      font-weight: bold;
+    }
+
+    &Middle {
+      &:hover {
+        background-color: dimgrey;
+      }
+    }
+
+    &Dots {
+      user-select: none;
+    }
+  }
+}
