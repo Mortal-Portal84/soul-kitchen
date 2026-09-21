@@ -29,7 +29,7 @@ const RecipeDetails: FC<Props> = ({recipe}) => {
         <ol className={styles.recipeIngridients}>
           {recipe.ingredients.map((ingredient) =>
             <li className={styles.recipeIngridient} key={ingredient.id}>
-              <span>{ingredient.name}: {ingredient.count !== 0 ? ingredient.count : ""} {ingredient.unit}</span>
+              <span>{ingredient.name}: {ingredient.count !== 0 ? ingredient.count : ""} {ingredient.unit.ru}</span>
             </li>
           )}
         </ol>

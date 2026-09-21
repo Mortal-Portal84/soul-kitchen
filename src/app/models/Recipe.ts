@@ -1,17 +1,3 @@
-export type Ingredient = {
-  id: string;
-  name: string;
-  count: number;
-  unit: 'гр.' | 'ст. л' | 'ч.л' | 'ст.' | 'шт.' | 'мл' | 'по вкусу'
-}
-
-type Step = {
-  id: string;
-  stepNumber: number;
-  picture: string;
-  text: string;
-}
-
 export const Category = {
   baking: {en: 'baking', ru: 'выпечка'},
   salads: {en: 'salads', ru: 'салаты'},
@@ -23,6 +9,32 @@ export const Category = {
 } as const
 
 export type Category = (typeof Category)[keyof typeof Category]
+
+export const Unit = {
+  gram: {ru: 'гр.', en: 'gr.'},
+  spoon: {ru: 'ст. л.', en: 'sp.'},
+  teaspoon: {ru: 'ч.л.', en: 't.s.'},
+  piece: {ru: 'шт.', en: 'piece'},
+  ml: {ru: 'мл', en: 'ml'},
+  taste: {ru: 'по вкусу', en: 'to taste'},
+  glass: {ru: 'стак.', en: 'gls.'}
+}
+
+export type Unit = (typeof Unit)[keyof typeof Unit]
+
+export type Ingredient = {
+  id: string;
+  name: string;
+  count: number;
+  unit: Unit
+}
+
+type Step = {
+  id: string;
+  stepNumber: number;
+  picture: string;
+  text: string;
+}
 
 export type Recipe = {
   id: string;

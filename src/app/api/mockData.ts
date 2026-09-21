@@ -1,4 +1,4 @@
-import { Category, Recipe } from "@/app/models"
+import { Category, Recipe, Unit } from "@/app/models"
 
 const recipes: Recipe[] = [
   {
@@ -13,31 +13,37 @@ const recipes: Recipe[] = [
         id: '2',
         name: 'Молоко',
         count: 2,
-        unit: 'ст.'
+        unit: Unit.glass
       },
       {
         id: '3',
         name: 'Мука',
         count: 1,
-        unit: 'ст.'
+        unit: Unit.glass
       },
       {
         id: '4',
         name: 'Сода',
         count: 0.5,
-        unit: 'ст. л'
+        unit: Unit.spoon
       },
       {
         id: '5',
         name: 'Соль',
         count: 3,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '6',
+        name: 'Сахар',
+        count: 2,
+        unit: Unit.spoon
+      },
+      {
+        id: '7',
         name: 'Масло растительное',
         count: 50,
-        unit: 'мл'
+        unit: Unit.ml
       },
     ],
     steps: [
@@ -69,53 +75,53 @@ const recipes: Recipe[] = [
   },
   {
     id: "2",
-    name: "Салат из капусты со свеклой",
-    description: "Самый простой, но очень вкусный и полезный салат из капусты со свеклой быстрого приготовления",
+    name: "Салат из капусты со свёклой",
+    description: "Самый простой, но очень вкусный и полезный салат из капусты со свёклой быстрого приготовления",
     image: "https://img.iamcook.ru/2017/upl/recipes/zen/u-614b766d2f0665b0180b5ce7c0fc97de.JPG",
     authorId: "332433",
     category: Category.salads,
     ingredients: [
       {
         id: '12',
-        name: 'Капуста',
+        name: 'Капуста красная белокочанная',
         count: 300,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '13',
         name: 'Свёкла',
         count: 150,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '14',
         name: 'Сок лимона',
         count: 2,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '15',
         name: 'Масло оливковое',
         count: 3,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '16',
         name: 'Сахар',
         count: 1,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '17',
-        name: 'Перец острый',
+        name: 'Перец чёрный острый, молотый',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
       {
         id: '18',
-        name: 'Зелень',
+        name: 'Петрушка свежая',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
     ],
     steps: [
@@ -157,37 +163,37 @@ const recipes: Recipe[] = [
         id: '12',
         name: 'Сливочное масло 82,5%',
         count: 200,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '13',
-        name: 'Сметана',
+        name: 'Сметана 20%',
         count: 200,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '14',
         name: 'Сухое молоко',
         count: 400,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '15',
-        name: 'Кешью',
+        name: 'Орехи кешью',
         count: 200,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '16',
         name: 'Сахар',
         count: 200,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '17',
-        name: 'Ваниль',
+        name: 'Ванилин',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
     ],
     steps: [
@@ -235,49 +241,49 @@ const recipes: Recipe[] = [
         id: '12',
         name: 'Тыква',
         count: 1000,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '13',
         name: 'Картошка',
         count: 500,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '14',
         name: 'Растительное масло',
         count: 2,
-        unit: 'ст. л'
+        unit: Unit.spoon
       },
       {
         id: '15',
         name: 'Карри',
         count: 2,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '16',
         name: 'Сливки',
         count: 150,
-        unit: 'мл'
+        unit: Unit.ml
       },
       {
         id: '17',
         name: 'Вода',
         count: 700,
-        unit: 'мл'
+        unit: Unit.ml
       },
       {
         id: '18',
         name: 'Соль',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
       {
         id: '19',
         name: 'Чёрный перец',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
     ],
     steps: [
@@ -319,67 +325,67 @@ const recipes: Recipe[] = [
         id: '12',
         name: 'Маш',
         count: 0.5,
-        unit: 'ст.'
+        unit: Unit.glass
       },
       {
         id: '13',
         name: 'Растительное масло',
         count: 100,
-        unit: 'мл'
+        unit: Unit.ml
       },
       {
         id: '14',
         name: 'Помидор',
         count: 2,
-        unit: 'шт.'
+        unit: Unit.piece
       },
       {
         id: '15',
         name: 'Зира',
         count: 1,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '16',
         name: 'Имбирь',
         count: 0.5,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '17',
         name: 'Куркума',
         count: 1,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '18',
         name: 'Соль',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
       {
         id: '19',
-        name: 'Паприка',
+        name: 'Паприка сушёная, молотая',
         count: 1,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '20',
         name: 'Асафетида',
         count: 0.5,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '21a',
         name: 'Рис',
         count: 1,
-        unit: 'ст.'
+        unit: Unit.glass
       },
       {
         id: '21',
         name: 'Перец чили',
         count: 0.5,
-        unit: 'шт.'
+        unit: Unit.piece
       },
     ],
     steps: [
@@ -427,43 +433,43 @@ const recipes: Recipe[] = [
         id: '12',
         name: 'Багет',
         count: 150,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '13',
         name: 'Авокадо',
         count: 1,
-        unit: 'шт.'
+        unit: Unit.piece
       },
       {
         id: '14',
         name: 'Помидоры черри',
         count: 5,
-        unit: 'шт.'
+        unit: Unit.piece
       },
       {
         id: '15',
         name: 'Сок лимона',
         count: 1,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '16',
         name: 'Оливковое масло',
         count: 1,
-        unit: 'ч.л'
+        unit: Unit.teaspoon
       },
       {
         id: '17',
         name: 'Чёрный перец',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
       {
         id: '18',
         name: 'Соль',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
     ],
     steps: [
@@ -486,14 +492,8 @@ const recipes: Recipe[] = [
         text: 'Разомните мякоть авокадо вилкой и добавьте немного оливкового масла. По вкусу добавьте соль и молотый перец. Все смешайте',
       },
       {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/old/upl/recipes/misc/b8d7cd55c1c9e59cdcec2aa3c012396c.jpg',
-        text: 'Всыпать подготовленный маш и промытый рис. Всё хорошо размешайте и залейте водой, выше густой массы на 3 сантиметра',
-      },
-      {
         id: '15',
-        stepNumber: 5,
+        stepNumber: 4,
         picture: 'https://img.iamcook.ru/2023/upl/recipes/byusers/misc/126663/912a120090a9d31435c344c1c5034f90-2023.jpg',
         text: 'Готовую массу разложите на ломтики багета. Сверху выложите нарезанные помидоры. Сверху можно украсить зеленью',
       },
@@ -511,1087 +511,31 @@ const recipes: Recipe[] = [
         id: '12',
         name: 'Банан',
         count: 450,
-        unit: 'гр.'
+        unit: Unit.gram
       },
       {
         id: '13',
-        name: 'Апельсины',
+        name: 'Апельсин',
         count: 2.5,
-        unit: 'шт.'
+        unit: Unit.piece
       },
       {
         id: '14',
         name: 'Мёд',
         count: 0,
-        unit: 'по вкусу'
+        unit: Unit.taste
       },
       {
         id: '15',
         name: 'Лёд',
         count: 3,
-        unit: 'шт.'
+        unit: Unit.piece
       },
       {
         id: '16',
         name: 'Йогурт',
         count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "8",
-    name: "Напиток тестовый",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "9",
-    name: "Напиток второй тестовый",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "10",
-    name: "Хрень вкусная",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "11",
-    name: "Шнапс безалкогольный",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "12",
-    name: "Напиток тестовый третий",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "13",
-    name: "Напиток ещё-какой-то",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "14",
-    name: "Напиток ещё какой-то",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "15",
-    name: "Напиток ещё какой-то",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "16",
-    name: "Напиток ещё какой-то",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "17",
-    name: "Напиток ещё какой-то",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "18",
-    name: "Напиток ещё какой-то",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "19",
-    name: "Напиток ещё какой-то",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "20",
-    name: "Напиток ещё какой-то",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "21",
-    name: "Напиток не очень",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "22",
-    name: "Напиток вкусный",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
-      },
-    ],
-    steps: [
-      {
-        id: '11',
-        stepNumber: 1,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/a96c9317c762b8a8161124abc6147ed7-2018.jpg',
-        text: 'Выжмите сок из апельсинов (200 мл). Очистите и нарежьте бананы крупными кусочками.',
-      },
-      {
-        id: '12',
-        stepNumber: 2,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/35f07af602288f688562f1457ffe7902-2018.jpg',
-        text: 'Поместите кусочки бананов в чашу блендера. Влейте апельсиновый сок и взбейте все 30-60 секунд, до однородности',
-      },
-      {
-        id: '13',
-        stepNumber: 3,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/byusers/misc/6009/81c811577b01ecdbcf4270e00e8fb98d-2018.jpg',
-        text: 'Добавьте 150 мл йогурта и взбейте все еще 10-15 секунд. Добавьте 3-4 кубика льда и мед по вкусу. Взбейте все еще 15-30 секунд.',
-      },
-      {
-        id: '14',
-        stepNumber: 4,
-        picture: 'https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg',
-        text: 'Разлейте напиток по бокалам, дополните соломинками и/или украсьте по настроению',
-      },
-    ]
-  },
-  {
-    id: "23",
-    name: "Напиток медгородок",
-    description: "Простой в приготовлении, полезный и вкусный напиток",
-    image: "https://img.iamcook.ru/2018/upl/recipes/zen/u6009-8d24f37ca774a8fc5bbebc9806e41c1b.jpg",
-    authorId: "4656774",
-    category: Category.drinks,
-    ingredients: [
-      {
-        id: '12',
-        name: 'Банан',
-        count: 450,
-        unit: 'гр.'
-      },
-      {
-        id: '13',
-        name: 'Апельсины',
-        count: 2.5,
-        unit: 'шт.'
-      },
-      {
-        id: '14',
-        name: 'Мёд',
-        count: 0,
-        unit: 'по вкусу'
-      },
-      {
-        id: '15',
-        name: 'Лёд',
-        count: 3,
-        unit: 'шт.'
-      },
-      {
-        id: '16',
-        name: 'Йогурт',
-        count: 150,
-        unit: 'мл'
+        unit: Unit.ml
       },
     ],
     steps: [
