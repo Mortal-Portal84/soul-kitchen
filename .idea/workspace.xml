@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bf891a3-8040-4a95-bc61-33caa28a3630" name="Changes" comment="" />
+    <list default="true" id="7bf891a3-8040-4a95-bc61-33caa28a3630" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,7 +128,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.Next.js: server-side.executor": "Run",
-    "settings.editor.selected.configurable": "preferences.editor",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
     "to.speed.mode.migration.done": "true",
     "ts.external.directory.path": "D:\\Web-projects\\next-learning\\node_modules\\typescript\\lib"
   }
@@ -179,7 +181,7 @@
       <workItem from="1789453417132" duration="4000" />
       <workItem from="1789453448745" duration="20877000" />
       <workItem from="1789976366555" duration="8953000" />
-      <workItem from="1789990737433" duration="1930000" />
+      <workItem from="1789990737433" duration="2306000" />
     </task>
     <servers />
   </component>
