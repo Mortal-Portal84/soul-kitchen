@@ -1,6 +1,11 @@
+import postgres from 'postgres'
 import mockData from "@/app/api/mockData"
+import { cookies } from "next/headers"
+import { createClient } from "@/app/lib/utils/supabase/server"
 
 const ITEMS_PER_PAGE = 4;
+
+const sql = postgres(process.env.NEXT_PUBLIC_SUPABASE_URL!, { ssl: 'require' });
 
 export async function fetchFilteredRecipes(
   query: string,
@@ -36,8 +41,14 @@ export async function fetchFilteredRecipes(
 
 // 2. Функция для подсчета общего количества страниц
 export async function fetchRecipesPages(query: string, category?: string) {
+  const cookieStore = await cookies()
+  const supabase = createClient(cookieStore)
+  const { data } = await supabase.from('recipes').select()
+
   try {
     let recipes = [...mockData];
+
+    console.log(data)
 
     if (category) {
       recipes = recipes.filter((recipe) => recipe.category.en === category);
