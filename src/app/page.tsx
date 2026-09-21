@@ -5,6 +5,7 @@ import Pagination from "@/app/ui/pagination"
 import { fetchFilteredRecipes, fetchRecipesPages } from "@/app/api/client"
 
 import styles from "./page.module.scss"
+import { Suspense } from "react"
 
 const Home = async (props: {
   searchParams?: Promise<{
@@ -36,7 +37,9 @@ const Home = async (props: {
         )}
       </ul>
 
-      <Pagination totalPages={totalPages}/>
+      <Suspense fallback={<div>Загрузка поиска...</div>}>
+        <Pagination totalPages={totalPages}/>
+      </Suspense>
     </div>
   )
 }

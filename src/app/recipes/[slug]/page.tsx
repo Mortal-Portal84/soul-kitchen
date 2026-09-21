@@ -6,6 +6,7 @@ import Pagination from "@/app/ui/pagination"
 import Card from "@/app/ui/card/card"
 
 import styles from '@/app/page.module.scss'
+import { Suspense } from "react"
 
 const Page = async (props: {
   params: Promise<{
@@ -41,7 +42,9 @@ const Page = async (props: {
           </li>)}
       </ul>
 
-      <Pagination totalPages={totalPages}/>
+      <Suspense fallback={<div>Загрузка поиска...</div>}>
+        <Pagination totalPages={totalPages}/>
+      </Suspense>
     </>
   )
 }

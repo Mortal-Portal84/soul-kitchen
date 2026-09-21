@@ -8,13 +8,16 @@ import Button from "@/app/ui/button"
 import Searchbar from "@/app/ui/searchbar"
 
 import styles from './header.module.scss'
+import { Suspense } from "react"
 
 export default function Header() {
 
   return (
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
-        <Searchbar/>
+        <Suspense fallback={<div>Загрузка поиска...</div>}>
+          <Searchbar/>
+        </Suspense>
 
         <h1>
           <Link href="/">
