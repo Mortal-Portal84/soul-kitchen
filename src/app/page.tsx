@@ -1,11 +1,11 @@
 import Link from "next/link"
+import { Suspense } from "react"
 import Card from "@/app/ui/card/card"
 import Pagination from "@/app/ui/pagination"
 
 import { fetchFilteredRecipes, fetchRecipesPages } from "@/app/api/client"
 
 import styles from "./page.module.scss"
-import { Suspense } from "react"
 
 const Home = async (props: {
   searchParams?: Promise<{
