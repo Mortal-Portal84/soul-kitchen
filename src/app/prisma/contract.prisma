@@ -1,0 +1,111 @@
+// use prisma-8
+// Contract inferred from the live database schema. Edit as needed, then run `prisma contract emit`.
+
+model Categories {
+  id                   BigInt                 @id(map: "categories_pkey") @default(autoincrement())
+  slug                 String                 @unique(map: "categories_slug_key")
+  categoryTranslations CategoryTranslations[]
+  recipes              Recipes[]
+
+  @@map("categories")
+}
+
+model CategoryTranslations {
+  id           BigInt      @id(map: "category_translations_pkey") @default(autoincrement())
+  categoryId   BigInt?     @map("category_id")
+  languageCode VarChar(10) @map("language_code")
+  name         String
+  category     Categories? @relation(fields: [categoryId], references: [id], onDelete: Cascade, map: "category_translations_category_id_fkey", index: false)
+
+  @@unique([categoryId, languageCode], map: "category_translations_category_id_language_code_key")
+  @@map("category_translations")
+}
+
+model Ingredients {
+  id                     BigInt                   @id(map: "ingredients_pkey") @default(autoincrement())
+  createdAt              Timestamptz?             @default(now()) @map("created_at")
+  ingredientTranslations IngredientTranslations[]
+
+  @@map("ingredients")
+}
+
+model IngredientTranslations {
+  id           BigInt       @id(map: "ingredient_translations_pkey") @default(autoincrement())
+  ingredientId BigInt?      @map("ingredient_id")
+  languageCode VarChar(10)  @map("language_code")
+  name         String
+  ingredient   Ingredients? @relation(fields: [ingredientId], references: [id], onDelete: Cascade, map: "ingredient_translations_ingredient_id_fkey", index: false)
+
+  @@unique([ingredientId, languageCode], map: "ingredient_translations_ingredient_id_language_code_key")
+  @@map("ingredient_translations")
+}
+
+model Recipes {
+  id                 BigInt               @id(map: "recipes_pkey") @default(autoincrement())
+  authorId           Uuid?                @map("author_id")
+  cookingTime        Int                  @map("cooking_time")
+  servings           Int                  @default(1)
+  imageUrl           String?              @map("image_url")
+  createdAt          Timestamptz?         @default(now()) @map("created_at")
+  updatedAt          Timestamptz?         @default(now()) @map("updated_at")
+  categoryId         BigInt?              @map("category_id")
+  recipeSteps        RecipeSteps[]
+  recipeTranslations RecipeTranslations[]
+  category           Categories?          @relation(fields: [categoryId], references: [id], onDelete: SetNull, map: "recipes_category_id_fkey", index: false)
+
+  @@map("recipes")
+}
+
+model RecipeSteps {
+  id                     BigInt                   @id(map: "recipe_steps_pkey") @default(autoincrement())
+  recipeId               BigInt?                  @map("recipe_id")
+  stepNumber             Int                      @map("step_number")
+  imageUrl               String?                  @map("image_url")
+  recipeStepTranslations RecipeStepTranslations[]
+  recipe                 Recipes?                 @relation(fields: [recipeId], references: [id], onDelete: Cascade, map: "recipe_steps_recipe_id_fkey", index: false)
+
+  @@unique([recipeId, stepNumber], map: "recipe_steps_recipe_id_step_number_key")
+  @@map("recipe_steps")
+}
+
+model RecipeStepTranslations {
+  id           BigInt       @id(map: "recipe_step_translations_pkey") @default(autoincrement())
+  stepId       BigInt?      @map("step_id")
+  languageCode VarChar(10)  @map("language_code")
+  instruction  String
+  step         RecipeSteps? @relation(fields: [stepId], references: [id], onDelete: Cascade, map: "recipe_step_translations_step_id_fkey", index: false)
+
+  @@unique([stepId, languageCode], map: "recipe_step_translations_step_id_language_code_key")
+  @@map("recipe_step_translations")
+}
+
+model RecipeTranslations {
+  id           BigInt      @id(map: "recipe_translations_pkey") @default(autoincrement())
+  recipeId     BigInt?     @map("recipe_id")
+  languageCode VarChar(10) @map("language_code")
+  title        String
+  description  String?
+  recipe       Recipes?    @relation(fields: [recipeId], references: [id], onDelete: Cascade, map: "recipe_translations_recipe_id_fkey", index: false)
+
+  @@unique([recipeId, languageCode], map: "recipe_translations_recipe_id_language_code_key")
+  @@map("recipe_translations")
+}
+
+model Units {
+  id               BigInt             @id(map: "units_pkey") @default(autoincrement())
+  code             VarChar(50)        @unique(map: "units_code_key")
+  unitTranslations UnitTranslations[]
+
+  @@map("units")
+}
+
+model UnitTranslations {
+  id           BigInt      @id(map: "unit_translations_pkey") @default(autoincrement())
+  unitId       BigInt?     @map("unit_id")
+  languageCode VarChar(10) @map("language_code")
+  label        VarChar(50)
+  unit         Units?      @relation(fields: [unitId], references: [id], onDelete: Cascade, map: "unit_translations_unit_id_fkey", index: false)
+
+  @@unique([unitId, languageCode], map: "unit_translations_unit_id_language_code_key")
+  @@map("unit_translations")
+}
