@@ -23,10 +23,10 @@ export const Unit = {
 export type Unit = (typeof Unit)[keyof typeof Unit]
 
 export type Ingredient = {
-  id: string;
-  name: string;
-  count: number;
-  unit: Unit
+  id: number
+  name: string
+  amount: number | null
+  unit: string
 }
 
 type Step = {

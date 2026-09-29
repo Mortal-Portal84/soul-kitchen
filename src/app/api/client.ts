@@ -113,10 +113,32 @@ export async function fetchRecipeById(
   try {
     const recipe = await db.orm.public.Recipes
         .where({ id: BigInt(id) })
+
+        // Перевод рецепта
         .include('recipeTranslations', (translations) =>
             translations.where({ languageCode: code })
         )
+
+        // Категория
         .include('category')
+
+        // Ингредиенты рецепта
+        .include('recipeIngredients', (recipeIngredients) =>
+            recipeIngredients
+                .include('ingredient', (ingredient) =>
+                    ingredient.include('ingredientTranslations', (translations) =>
+                        translations.where({ languageCode: code })
+                    )
+                )
+                .include('unit', (unit) =>
+                    unit.include('unitTranslations', (translations) =>
+                        translations.where({ languageCode: code })
+                    )
+                )
+                .orderBy((ingredient) => ingredient.position.asc())
+        )
+
+        // Шаги рецепта
         .include('recipeSteps', (steps) =>
             steps
                 .include('recipeStepTranslations', (translations) =>
@@ -124,6 +146,7 @@ export async function fetchRecipeById(
                 )
                 .orderBy((step) => step.stepNumber.asc())
         )
+
         .first();
 
     if (!recipe) {
@@ -140,8 +163,27 @@ export async function fetchRecipeById(
       categorySlug: recipe.category?.slug ?? null,
       cookingTime: recipe.cookingTime,
       servings: recipe.servings,
-      // TODO: в БД пока нет связи рецептов с ингредиентами (recipe_ingredients)
-      ingredients: [],
+
+      ingredients: recipe.recipeIngredients
+          .filter(
+              (recipeIngredient) =>
+                  recipeIngredient.ingredient !== null &&
+                  recipeIngredient.unit !== null
+          )
+          .map((recipeIngredient) => ({
+            id: Number(recipeIngredient.ingredient?.id) ?? 0,
+            name:
+                recipeIngredient.ingredient?.ingredientTranslations[0]?.name ??
+                'Без названия',
+            amount:
+                recipeIngredient.amount !== null
+                    ? Number(recipeIngredient.amount)
+                    : null,
+            unit:
+                recipeIngredient.unit?.unitTranslations[0]?.label ??
+                recipeIngredient.unit?.code ?? '',
+          })),
+
       steps: recipe.recipeSteps.map((step) => ({
         id: Number(step.id),
         stepNumber: step.stepNumber,
