@@ -1,5 +1,5 @@
 import { defineContract } from '@prisma/orm-postgres/contract-builder';
-import { timestamptzTemporalColumn, varcharColumn } from '@prisma/orm-postgres/adapter/column-types';
+import { numericColumn, timestamptzTemporalColumn, varcharColumn } from '@prisma/orm-postgres/adapter/column-types';
 
 export const contract = defineContract({}, ({ field, model, rel }) => {
 
@@ -47,6 +47,17 @@ export const contract = defineContract({}, ({ field, model, rel }) => {
       categoryId: field.bigint().column('category_id').optional(),
     },
   }).sql({ table: 'recipes' });
+
+  const RecipeIngredients = model('RecipeIngredients', {
+    fields: {
+      id: field.bigint(),
+      recipeId: field.bigint().column('recipe_id'),
+      ingredientId: field.bigint().column('ingredient_id'),
+      unitId: field.bigint().column('unit_id'),
+      amount: field.column(numericColumn(10, 2)).optional(),
+      position: field.int().default(1),
+    },
+  }).sql({ table: 'recipe_ingredients' });
 
   const RecipeSteps = model('RecipeSteps', {
     fields: {
@@ -103,14 +114,21 @@ export const contract = defineContract({}, ({ field, model, rel }) => {
       }),
       Ingredients: Ingredients.relations({
         ingredientTranslations: rel.hasMany(IngredientTranslations, { by: 'ingredientId' }),
+        recipeIngredients: rel.hasMany(RecipeIngredients, { by: 'ingredientId' }),
       }),
       IngredientTranslations: IngredientTranslations.relations({
         ingredient: rel.belongsTo(Ingredients, { from: 'ingredientId', to: 'id' }),
       }),
       Recipes: Recipes.relations({
         category: rel.belongsTo(Categories, { from: 'categoryId', to: 'id' }),
+        recipeIngredients: rel.hasMany(RecipeIngredients, { by: 'recipeId' }),
         recipeSteps: rel.hasMany(RecipeSteps, { by: 'recipeId' }),
         recipeTranslations: rel.hasMany(RecipeTranslations, { by: 'recipeId' }),
+      }),
+      RecipeIngredients: RecipeIngredients.relations({
+        ingredient: rel.belongsTo(Ingredients, { from: 'ingredientId', to: 'id' }),
+        recipe: rel.belongsTo(Recipes, { from: 'recipeId', to: 'id' }),
+        unit: rel.belongsTo(Units, { from: 'unitId', to: 'id' }),
       }),
       RecipeSteps: RecipeSteps.relations({
         recipe: rel.belongsTo(Recipes, { from: 'recipeId', to: 'id' }),
@@ -123,6 +141,7 @@ export const contract = defineContract({}, ({ field, model, rel }) => {
         recipe: rel.belongsTo(Recipes, { from: 'recipeId', to: 'id' }),
       }),
       Units: Units.relations({
+        recipeIngredients: rel.hasMany(RecipeIngredients, { by: 'unitId' }),
         unitTranslations: rel.hasMany(UnitTranslations, { by: 'unitId' }),
       }),
       UnitTranslations: UnitTranslations.relations({

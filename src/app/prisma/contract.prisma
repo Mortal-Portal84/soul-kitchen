@@ -25,6 +25,7 @@ model Ingredients {
   id                     BigInt                   @id(map: "ingredients_pkey") @default(autoincrement())
   createdAt              Timestamptz?             @default(now()) @map("created_at")
   ingredientTranslations IngredientTranslations[]
+  recipeIngredients      RecipeIngredients[]
 
   @@map("ingredients")
 }
@@ -49,11 +50,38 @@ model Recipes {
   createdAt          Timestamptz?         @default(now()) @map("created_at")
   updatedAt          Timestamptz?         @default(now()) @map("updated_at")
   categoryId         BigInt?              @map("category_id")
+  recipeIngredients  RecipeIngredients[]
   recipeSteps        RecipeSteps[]
   recipeTranslations RecipeTranslations[]
   category           Categories?          @relation(fields: [categoryId], references: [id], onDelete: SetNull, map: "recipes_category_id_fkey", index: false)
 
   @@map("recipes")
+}
+
+model Units {
+  id                BigInt              @id(map: "units_pkey") @default(autoincrement())
+  code              VarChar(50)         @unique(map: "units_code_key")
+  recipeIngredients RecipeIngredients[]
+  unitTranslations  UnitTranslations[]
+
+  @@map("units")
+}
+
+model RecipeIngredients {
+  id           BigInt          @id(map: "recipe_ingredients_pkey") @default(autoincrement())
+  recipeId     BigInt          @map("recipe_id")
+  ingredientId BigInt          @map("ingredient_id")
+  unitId       BigInt          @map("unit_id")
+  amount       Numeric(10, 2)?
+  position     Int             @default(1)
+  ingredient   Ingredients     @relation(fields: [ingredientId], references: [id], onDelete: Restrict, map: "recipe_ingredients_ingredient_id_fkey")
+  recipe       Recipes         @relation(fields: [recipeId], references: [id], onDelete: Cascade, map: "recipe_ingredients_recipe_id_fkey", index: false)
+  unit         Units           @relation(fields: [unitId], references: [id], onDelete: Restrict, map: "recipe_ingredients_unit_id_fkey", index: false)
+
+  @@unique([recipeId, ingredientId], map: "recipe_ingredients_recipe_id_ingredient_id_key")
+  @@index([ingredientId], map: "recipe_ingredients_ingredient_id_idx")
+  @@check(expression: "((amount IS NULL) OR (amount > (0)::numeric))", map: "recipe_ingredients_amount_check")
+  @@map("recipe_ingredients")
 }
 
 model RecipeSteps {
@@ -89,14 +117,6 @@ model RecipeTranslations {
 
   @@unique([recipeId, languageCode], map: "recipe_translations_recipe_id_language_code_key")
   @@map("recipe_translations")
-}
-
-model Units {
-  id               BigInt             @id(map: "units_pkey") @default(autoincrement())
-  code             VarChar(50)        @unique(map: "units_code_key")
-  unitTranslations UnitTranslations[]
-
-  @@map("units")
 }
 
 model UnitTranslations {

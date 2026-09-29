@@ -20,6 +20,10 @@
       "model": "Ingredients",
       "namespace": "public"
     },
+    "recipe_ingredients": {
+      "model": "RecipeIngredients",
+      "namespace": "public"
+    },
     "recipe_step_translations": {
       "model": "RecipeStepTranslations",
       "namespace": "public"
@@ -285,6 +289,21 @@
                   "model": "IngredientTranslations",
                   "namespace": "public"
                 }
+              },
+              "recipeIngredients": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "ingredientId"
+                  ]
+                },
+                "to": {
+                  "model": "RecipeIngredients",
+                  "namespace": "public"
+                }
               }
             },
             "storage": {
@@ -298,6 +317,130 @@
               },
               "namespaceId": "public",
               "table": "ingredients"
+            }
+          },
+          "RecipeIngredients": {
+            "fields": {
+              "amount": {
+                "nullable": true,
+                "type": {
+                  "codecId": "pg/numeric@1",
+                  "kind": "scalar",
+                  "typeParams": {
+                    "precision": 10,
+                    "scale": 2
+                  }
+                }
+              },
+              "id": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int8@1",
+                  "kind": "scalar"
+                }
+              },
+              "ingredientId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int8@1",
+                  "kind": "scalar"
+                }
+              },
+              "position": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int4@1",
+                  "kind": "scalar"
+                }
+              },
+              "recipeId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int8@1",
+                  "kind": "scalar"
+                }
+              },
+              "unitId": {
+                "nullable": false,
+                "type": {
+                  "codecId": "pg/int8@1",
+                  "kind": "scalar"
+                }
+              }
+            },
+            "relations": {
+              "ingredient": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "ingredientId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "Ingredients",
+                  "namespace": "public"
+                }
+              },
+              "recipe": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "recipeId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "Recipes",
+                  "namespace": "public"
+                }
+              },
+              "unit": {
+                "cardinality": "N:1",
+                "nullable": false,
+                "on": {
+                  "localFields": [
+                    "unitId"
+                  ],
+                  "targetFields": [
+                    "id"
+                  ]
+                },
+                "to": {
+                  "model": "Units",
+                  "namespace": "public"
+                }
+              }
+            },
+            "storage": {
+              "fields": {
+                "amount": {
+                  "column": "amount"
+                },
+                "id": {
+                  "column": "id"
+                },
+                "ingredientId": {
+                  "column": "ingredient_id"
+                },
+                "position": {
+                  "column": "position"
+                },
+                "recipeId": {
+                  "column": "recipe_id"
+                },
+                "unitId": {
+                  "column": "unit_id"
+                }
+              },
+              "namespaceId": "public",
+              "table": "recipe_ingredients"
             }
           },
           "RecipeStepTranslations": {
@@ -611,6 +754,21 @@
                   "namespace": "public"
                 }
               },
+              "recipeIngredients": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "recipeId"
+                  ]
+                },
+                "to": {
+                  "model": "RecipeIngredients",
+                  "namespace": "public"
+                }
+              },
               "recipeSteps": {
                 "cardinality": "1:N",
                 "on": {
@@ -768,6 +926,21 @@
               }
             },
             "relations": {
+              "recipeIngredients": {
+                "cardinality": "1:N",
+                "on": {
+                  "localFields": [
+                    "id"
+                  ],
+                  "targetFields": [
+                    "unitId"
+                  ]
+                },
+                "to": {
+                  "model": "RecipeIngredients",
+                  "namespace": "public"
+                }
+              },
               "unitTranslations": {
                 "cardinality": "1:N",
                 "on": {
@@ -891,6 +1064,51 @@
                   "nullable": true
                 },
                 "id": {
+                  "codecId": "pg/int8@1",
+                  "nativeType": "int8",
+                  "nullable": false
+                }
+              },
+              "foreignKeys": [],
+              "indexes": [],
+              "uniques": []
+            },
+            "recipe_ingredients": {
+              "columns": {
+                "amount": {
+                  "codecId": "pg/numeric@1",
+                  "nativeType": "numeric",
+                  "nullable": true,
+                  "typeParams": {
+                    "precision": 10,
+                    "scale": 2
+                  }
+                },
+                "id": {
+                  "codecId": "pg/int8@1",
+                  "nativeType": "int8",
+                  "nullable": false
+                },
+                "ingredient_id": {
+                  "codecId": "pg/int8@1",
+                  "nativeType": "int8",
+                  "nullable": false
+                },
+                "position": {
+                  "codecId": "pg/int4@1",
+                  "default": {
+                    "kind": "literal",
+                    "value": 1
+                  },
+                  "nativeType": "int4",
+                  "nullable": false
+                },
+                "recipe_id": {
+                  "codecId": "pg/int8@1",
+                  "nativeType": "int8",
+                  "nullable": false
+                },
+                "unit_id": {
                   "codecId": "pg/int8@1",
                   "nativeType": "int8",
                   "nullable": false
@@ -1108,7 +1326,7 @@
         "kind": "postgres-schema"
       }
     },
-    "storageHash": "fdef42c759ebbfe2b46abb596a39d7da34c30bc54fa220aa92daca46c7fcacb2"
+    "storageHash": "2c5af7bfb06364cc2ed5bd235d2dd5c6264186fc853e5b0cfd90bbdee58d170d"
   },
   "capabilities": {
     "postgres": {
