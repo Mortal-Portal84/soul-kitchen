@@ -1,5 +1,5 @@
-import mockData from "@/app/api/mockData"
 import RecipeDetails from "@/app/ui/recipe"
+import {fetchRecipeById} from "@/app/api/client"
 
 type Props = {
   params: Promise<{
@@ -11,7 +11,7 @@ type Props = {
 const RecipeDetailPage = async ({ params }: Props) => {
   const { slug, id } = await params;
 
-  const recipe = mockData.find((item) => item.id === id);
+  const recipe = await fetchRecipeById(id);
 
   console.log(slug, 'для Breadcrumbs')
 

@@ -3,7 +3,7 @@ import { Suspense } from "react"
 import Card from "@/app/ui/card/card"
 import Pagination from "@/app/ui/pagination"
 
-import { fetchFilteredRecipes, fetchRecipesPages } from "@/app/api/client"
+import {fetchFilteredRecipes, fetchRecipesPages} from "@/app/api/client"
 
 import styles from "./page.module.scss"
 
@@ -30,7 +30,7 @@ const Home = async (props: {
       <ul className={styles.pageList}>
         {recipes.map((recipe) =>
           <li key={recipe.id}>
-            <Link href={`/recipes/${recipe.category.en}/${recipe.id}`}>
+            <Link href={`/recipes/${recipe.categorySlug}/${recipe.id}`}>
               <Card recipe={recipe}/>
             </Link>
           </li>

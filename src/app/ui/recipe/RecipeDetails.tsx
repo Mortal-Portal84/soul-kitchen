@@ -1,12 +1,12 @@
 import { type FC } from 'react'
 import Image from "next/image"
 
-import { Recipe } from "@/app/models"
+import { RecipeDetail } from "@/app/models"
 
 import styles from './RecipeDetails.module.scss'
 
 type Props = {
-  recipe: Recipe
+  recipe: RecipeDetail
 }
 
 const RecipeDetails: FC<Props> = ({recipe}) => {
@@ -20,7 +20,7 @@ const RecipeDetails: FC<Props> = ({recipe}) => {
 
         <Image
           className={styles.recipeImage}
-          src={recipe.image}
+          src={recipe.image ?? '/file.svg'}
           alt={`Изображение ${recipe.name}`}
           width={430}
           height={320}
@@ -42,7 +42,7 @@ const RecipeDetails: FC<Props> = ({recipe}) => {
           <li key={step.id} className={styles.recipeStep}>
             <Image
               className={styles.recipeStepImage}
-              src={step.picture}
+              src={step.image ?? '/file.svg'}
               alt={`Изображение шага номер ${step.stepNumber}`}
               width={320}
               height={210}

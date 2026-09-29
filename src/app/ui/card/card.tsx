@@ -1,18 +1,18 @@
 import { type FC } from 'react'
-import { Recipe } from "@/app/models"
+import { RecipeCard} from "@/app/models"
 import Image from "next/image"
 
 import styles from './card.module.scss'
 
 type Props = {
-  recipe: Recipe
+  recipe: RecipeCard
 }
 
 const Card: FC<Props> = ({recipe}) => {
 
   return (
     <div className={styles.card}>
-      <Image className={styles.cardImage} src={recipe.image} alt={`Изображение ${recipe.name}`} width={320} height={210}/>
+      <Image className={styles.cardImage} src={recipe.image ?? '/file.svg'} alt={`Изображение ${recipe.name}`} width={320} height={210}/>
 
       <div className={styles.cardWrapper}>
         <h3 className={styles.cardTitle}>{recipe.name}</h3>

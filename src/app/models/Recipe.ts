@@ -47,3 +47,32 @@ export type Recipe = {
   steps: Step[]
 }
 
+export type RecipeDetailStep = {
+  id: number
+  stepNumber: number
+  image: string | null
+  text: string
+}
+
+// Данные для страницы рецепта (форма, в которую приводим ответ Prisma)
+export type RecipeDetail = {
+  id: number
+  name: string
+  description: string | null
+  image: string | null
+  categorySlug: string | null
+  cookingTime: number
+  servings: number
+  ingredients: Ingredient[]
+  steps: RecipeDetailStep[]
+}
+
+// Данные для карточки рецепта в списках (форма, в которую приводим ответ Prisma)
+export type RecipeCard = {
+  id: number
+  name: string
+  description: string | null
+  image: string | null
+  categorySlug: string | null
+}
+
