@@ -20,13 +20,13 @@ export default function Header() {
         </Suspense>
 
         <h1>
-          <Link href="/">
+          <Link href="/recipes">
             Soul Kitchen - лучшие вегетарианские рецепты! <span aria-hidden="true">🌿</span>
           </Link>
         </h1>
 
         <div className={styles.headerAuthorize}>
-          <Link href="/">
+          <Link href="/login">
             <Button>Войти</Button>
           </Link>
 

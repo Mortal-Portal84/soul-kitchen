@@ -1,8 +1,5 @@
 import type { Metadata } from "next"
-
-import Header from "@/app/ui/header"
-import Categories from "@/app/ui/categories"
-import Footer from "@/app/ui/footer"
+import * as React from "react"
 
 import { geist } from "@/app/ui/fonts"
 import "./globals.css"
@@ -16,17 +13,11 @@ export default function RootLayout({children}: LayoutProps<"/">) {
   return (
     <html lang="ru">
     <body className={`${geist.className} antialiased`}>
-    <Header/>
-
     <div className="container">
-      <Categories/>
-
       <main className="main">
         {children}
       </main>
     </div>
-
-    <Footer/>
     </body>
     </html>
   )

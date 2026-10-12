@@ -1,0 +1,52 @@
+import { Suspense } from 'react'
+import type { Metadata } from "next"
+import styles from "@/app/page.module.scss"
+import Link from "next/link"
+import Card from "@/app/ui/card/card"
+import Pagination from "@/app/ui/pagination"
+import { fetchFilteredRecipes, fetchRecipesPages } from "@/app/api/client"
+
+export const metadata: Metadata = {
+  title: "Soul Kitchen | Recipes",
+  description: "Vegetarian recipes collection",
+}
+
+const RecipesPage = async (props: {
+  searchParams?: Promise<{
+    query?: string
+    page?: string
+  }>
+}) => {
+  const searchParams = await props.searchParams
+  const query = searchParams?.query || ''
+  const currentPage = Number(searchParams?.page) || 1
+  const totalPages = await fetchRecipesPages(query)
+  const recipes = await fetchFilteredRecipes(query, currentPage)
+
+  if (recipes.length === 0) {
+    return <h3 className={styles.pageEmptyPlaceholder}>По вашему запросу данных блюд не найдено 😢</h3>
+  }
+  return (
+    <>
+      <div className={styles.page}>
+        <h2 className={styles.pageTitle}>Все блюда</h2>
+
+        <ul className={styles.pageList}>
+          {recipes.map((recipe) =>
+            <li key={recipe.id}>
+              <Link href={`/recipes/${recipe.categorySlug}/${recipe.id}`}>
+                <Card recipe={recipe}/>
+              </Link>
+            </li>
+          )}
+        </ul>
+
+        <Suspense fallback={<div>Загрузка поиска...</div>}>
+          <Pagination totalPages={totalPages}/>
+        </Suspense>
+      </div>
+    </>
+  )
+}
+
+export default RecipesPage
