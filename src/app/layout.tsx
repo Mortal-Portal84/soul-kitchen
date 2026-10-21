@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import * as React from "react"
 
 import { geist } from "@/app/ui/fonts"
+
 import "./globals.css"
 
 export const metadata: Metadata = {

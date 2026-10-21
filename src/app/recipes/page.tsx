@@ -1,10 +1,13 @@
 import { Suspense } from 'react'
 import type { Metadata } from "next"
-import styles from "@/app/page.module.scss"
 import Link from "next/link"
+
 import Card from "@/app/ui/card/card"
 import Pagination from "@/app/ui/pagination"
+
 import { fetchFilteredRecipes, fetchRecipesPages } from "@/app/api/client"
+
+import styles from "@/app/page.module.scss"
 
 export const metadata: Metadata = {
   title: "Soul Kitchen | Recipes",
