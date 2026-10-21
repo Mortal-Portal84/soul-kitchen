@@ -57,7 +57,7 @@ const LoginForm: FC = ({  }) => {
         </div>
       </div>
       <input type="hidden" name="redirectTo" value={callbackUrl} />
-      <Button aria-disabled={isPending}>Войти</Button>
+      <Button type="submit" aria-disabled={isPending}>Войти</Button>
       <div className={styles.loginFormError}>
         <span className={styles.loginFormErrorIcon}>🛑</span>
         <p className={styles.loginFormErrorText}>{errorMessage}</p>

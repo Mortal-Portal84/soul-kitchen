@@ -1,4 +1,4 @@
-import { type FC } from 'react'
+import { type FC, Suspense } from 'react'
 import { Metadata } from 'next'
 import LoginForm from "@/app/ui/login-form"
 
@@ -10,7 +10,9 @@ const Page: FC = ({  }) => {
 
   return (
     <>
-        <LoginForm/>
+      <Suspense>
+        <LoginForm />
+      </Suspense>
     </>
   )
 }
