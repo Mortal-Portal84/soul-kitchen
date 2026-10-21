@@ -1,11 +1,10 @@
-'use client'
-
 import * as React from 'react'
 import { Suspense } from "react"
 import Link from "next/link"
 
 import Button from "@/app/ui/button"
 import Searchbar from "@/app/ui/searchbar"
+import { signOut } from "@/auth"
 
 import styles from './header.module.scss'
 
@@ -25,12 +24,17 @@ export default function Header() {
         </h1>
 
         <div className={styles.headerAuthorize}>
-          <Link href="/login">
-            <Button>Войти</Button>
-          </Link>
+          <form
+            action={async () => {
+              'use server'
+              await signOut({ redirectTo: '/' })
+            }}
+          >
+            <Button type="submit">Выйти</Button>
+          </form>
 
           <Link href="/">
-            <Button>Зарегистрироваться</Button>
+            <Button>Добавить рецепт</Button>
           </Link>
         </div>
       </div>

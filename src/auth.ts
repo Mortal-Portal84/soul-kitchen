@@ -3,7 +3,7 @@ import { z } from 'zod'
 import postgres from 'postgres'
 import bcrypt from 'bcrypt'
 
-import { authConfig } from './auth.config'
+import { authConfig } from '@/auth.config'
 import Credentials from 'next-auth/providers/credentials'
 import type { User } from '@/app/models/User'
 
