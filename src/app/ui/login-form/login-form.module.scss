@@ -1,6 +1,5 @@
 .loginForm {
   &Error {
-    background-color: white;
 
     &Text {
       color: red;
@@ -8,7 +7,6 @@
 
     &Icon {
       padding: 10px;
-      background-color: green;
     }
   }
 }
