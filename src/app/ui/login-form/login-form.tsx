@@ -1,14 +1,15 @@
 'use client'
 
-import { type FC, useActionState } from 'react'
+import { type FC, useActionState, useState } from 'react'
 import { useSearchParams } from "next/navigation"
 import { authenticate } from "@/app/lib/actions"
 import Button from "@/app/ui/button"
 import FormInput from "@/app/ui/input"
 
 import styles from './login-form.module.scss'
+import Link from "next/link"
 
-const LoginForm: FC = ({}) => {
+const LoginForm: FC = () => {
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') || '/recipes'
   const [errorMessage, formAction, isPending] = useActionState(
@@ -24,7 +25,13 @@ const LoginForm: FC = ({}) => {
 
       <input type="hidden" name="redirectTo" value={callbackUrl}/>
 
-      <Button type="submit" aria-disabled={isPending}>Войти</Button>
+      <div className={styles.loginFormButtons}>
+        <Button type="submit" aria-disabled={isPending}>Войти</Button>
+
+        <Link href="/register">
+          <Button>Регистрация</Button>
+        </Link>
+      </div>
 
       {errorMessage && (
         <div className={styles.loginFormError}>
